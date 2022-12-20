@@ -50,6 +50,7 @@
                  }
              });
         });
+
         function success(data,status,xhr) {
             if(maxAge <=0){
                 maxAge = extractMaxAge(xhr.getResponseHeader('Cache-Control'))
@@ -60,6 +61,7 @@
             $('#headers').val(xhr.getResponseHeader('Cache-Control'))
                     
         }
+
         function extractMaxAge(cacheHeader){
             var index = cacheHeader.indexOf("max-age=")
             var val = cacheHeader.substring(index+"max-age=".length)
@@ -87,4 +89,5 @@
     <h4>HTTP Header</h4>
     <textarea cols="50" rows="5" id="headers"></textarea>
 </body>
+
 </html>
